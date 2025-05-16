@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const jwt = require('jsonwebtoken');
-const { validUsername, validPassword } = require('../config/credentials');
+const { validUsername, validPassword } = require('../config/credential');
 const { SECRET_KEY } = require('../middleware/auth');
 
 router.post('/login', (req, res) => {
@@ -14,5 +14,6 @@ router.post('/login', (req, res) => {
     res.status(401).json({ message: 'Invalid credentials' });
   }
 });
+
 
 module.exports = router;

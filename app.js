@@ -4,7 +4,7 @@ const port = 3000;
 
 const promptRoutes = require('./routes/appRoutes');
 const summarizeRoutes = require('./routes/summarizeRoutes');
-const authRoutes = require('./routes/authRoutes');
+const authRoutes = require('./routes/appRoutes'); 
 
 app.use(express.json());
 
@@ -12,7 +12,7 @@ app.get('/', (req, res) => {
   res.send('Hello from Node.js API!');
 });
 
-// Public route to get JWT
+// Public route for JWT login
 app.use('/', authRoutes);
 
 // Protected routes
